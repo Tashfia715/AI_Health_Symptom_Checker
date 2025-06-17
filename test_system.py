@@ -23,7 +23,7 @@ def run_test_case(description: str, symptoms: str) -> None:
         description (str): Test case description
         symptoms (str): Symptom description to test
     """
-    print(f"\n🔍 Testing: {description}")
+    print(f"\nTesting: {description}")
     print(f"Input: {symptoms}")
     print("-" * 50)
 
@@ -47,15 +47,15 @@ def run_test_case(description: str, symptoms: str) -> None:
         prediction = predict_condition(model, encoder, symptoms)
         print(f"\nPredicted Condition: {prediction}")
 
-        print("\n✅ Test completed successfully")
+        print("\nTest completed successfully")
 
     except (PredictionError, SymptomParserError, RuleEngineError) as e:
         logger.error(f"Test failed: {str(e)}")
-        print(f"\n❌ Test failed: {str(e)}")
+        print(f"\n Test failed: {str(e)}")
 
 def main():
     """Run a series of test cases through the system."""
-    print("\n🤖 AI Symptom Checker - System Test")
+    print("\n AI Symptom Checker - System Test")
     print("=" * 50)
 
     test_cases = [
@@ -88,11 +88,11 @@ def main():
             print("\n" + "=" * 50)
 
     except KeyboardInterrupt:
-        print("\n\n⚠️  Testing interrupted by user")
+        print("\n\n⚠  Testing interrupted by user")
         sys.exit(1)
     except Exception as e:
         logger.critical(f"Unexpected error: {str(e)}")
-        print(f"\n❌ An unexpected error occurred: {str(e)}")
+        print(f"\n An unexpected error occurred: {str(e)}")
         sys.exit(1)
 
 if __name__ == "__main__":
